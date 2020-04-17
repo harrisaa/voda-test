@@ -39,14 +39,14 @@ You can do this:
 #### Case statements
 It also allows case statements:
 ```js
-  <Case>
+  <Choose>
     <When condition={...}>
     </When>
     <When condition={...}>
     </When>
     <Otherwise>
     </Otherwise>
-  </Case>
+  </Choose>
 ```
 
 For more information see the [documentation](https://www.npmjs.com/package/jsx-control-statements)
