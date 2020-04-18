@@ -5,7 +5,7 @@ const UserItem = (props) => {
   return <li>
     <p><strong>Name: </strong>{props.user.title} {props.user.firstName} {props.user.lastName}</p>
     <p><strong>Date of birth:</strong> {props.user.dob}</p>
-    <button onClick={props.onClick}>Edit</button>
+    <button onClick={props.onClick}>Edit user</button>
   </li>;
 }
 
