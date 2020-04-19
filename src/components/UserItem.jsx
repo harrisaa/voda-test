@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserItem = (props) => {
+const UserItem = ({ user, onClick }) => {
   return <li>
-    <p><strong>Name: </strong>{props.user.title} {props.user.firstName} {props.user.lastName}</p>
-    <p><strong>Date of birth:</strong> {props.user.dob}</p>
-    <button onClick={props.onClick}>Edit user</button>
+    <p><strong>Name: </strong>{user.title} {user.firstName} {user.lastName}</p>
+    <p><strong>Date of birth:</strong> {user.dob}</p>
+    <button onClick={onClick}>Edit user</button>
   </li>;
 }
 
