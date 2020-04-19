@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const EditUser = ({ user, onClick, onChange }) => {
-  const [formData, updateFormData] = useState({
+  const [userData, updateUserData] = useState({
     id: user.id,
     title: user.title,
     firstName: user.firstName,
@@ -12,17 +12,17 @@ const EditUser = ({ user, onClick, onChange }) => {
 
   const updateUser = (event) => {
     const field = event.target;
-    updateFormData({
-      ...formData,
+    updateUserData({
+      ...userData,
       [field.id]: field.value,
     });
-    onChange(event, formData)
+    onChange(event, userData)
   }
 
   return <li>
     <div>
       <label htmlFor="title">Title</label>
-      <select id="title" value={formData.title} onChange={updateUser} onBlur={updateUser}>
+      <select id="title" value={userData.title} onChange={updateUser} onBlur={updateUser}>
         <option value="Ms">Ms</option>
         <option value="Mr">Mr</option>
         <option value="Mrs">Mrs</option>
@@ -34,15 +34,15 @@ const EditUser = ({ user, onClick, onChange }) => {
     </div>
     <div>
       <label htmlFor="firstName">First Name</label>
-      <input id="firstName" type="text" value={formData.firstName} onChange={updateUser} onBlur={updateUser} />
+      <input id="firstName" type="text" value={userData.firstName} onChange={updateUser} onBlur={updateUser} />
     </div>
     <div>
       <label htmlFor="lastName">Last Name</label>
-      <input id="lastName" type="text" value={formData.lastName} onChange={updateUser} onBlur={updateUser}  />
+      <input id="lastName" type="text" value={userData.lastName} onChange={updateUser} onBlur={updateUser}  />
     </div>
     <div>
       <label htmlFor="dob">Date of birth</label>
-      <input id="dob" type="text" value={formData.dob} onChange={updateUser} onBlur={updateUser}  />
+      <input id="dob" type="text" value={userData.dob} onChange={updateUser} onBlur={updateUser}  />
     </div>
     <button onClick={onClick}>Update user</button>
   </li>

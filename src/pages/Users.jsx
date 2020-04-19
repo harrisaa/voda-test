@@ -25,8 +25,8 @@ const Users = () => {
   };
 
   const editUser = () => {
-    const foundIndex = userData.findIndex(x => x.id === selectedUser.id);
-    userData[foundIndex] = selectedUser;
+    const indexOfUser = userData.findIndex(x => x.id === selectedUser.id);
+    userData[indexOfUser] = selectedUser;
     setSelectedUser(null)
   };
 
