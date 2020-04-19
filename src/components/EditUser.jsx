@@ -10,7 +10,7 @@ const EditUser = ({ user, onClick, onChange }) => {
     dob: user.dob,
   });
 
-  const updateUse = (event) => {
+  const updateUser = (event) => {
     const field = event.target;
     updateFormData({
       ...formData,
@@ -22,7 +22,7 @@ const EditUser = ({ user, onClick, onChange }) => {
   return <li>
     <div>
       <label htmlFor="title">Title</label>
-      <select id="title" value={formData.title} onChange={updateUse}>
+      <select id="title" value={formData.title} onChange={updateUser} onBlur={updateUser}>
         <option value="Ms">Ms</option>
         <option value="Mr">Mr</option>
         <option value="Mrs">Mrs</option>
@@ -34,17 +34,17 @@ const EditUser = ({ user, onClick, onChange }) => {
     </div>
     <div>
       <label htmlFor="firstName">First Name</label>
-      <input id="firstName" type="text" value={formData.firstName} onChange={updateUse} />
+      <input id="firstName" type="text" value={formData.firstName} onChange={updateUser} onBlur={updateUser} />
     </div>
     <div>
       <label htmlFor="lastName">Last Name</label>
-      <input id="lastName" type="text" value={formData.lastName} onChange={updateUse} />
+      <input id="lastName" type="text" value={formData.lastName} onChange={updateUser} onBlur={updateUser}  />
     </div>
     <div>
       <label htmlFor="dob">Date of birth</label>
-      <input id="dob" type="text" value={formData.dob} onChange={updateUse} />
+      <input id="dob" type="text" value={formData.dob} onChange={updateUser} onBlur={updateUser}  />
     </div>
-    <button onClick={() => onClick(formData)}>Update user</button>
+    <button onClick={onClick}>Update user</button>
   </li>
 };
 
