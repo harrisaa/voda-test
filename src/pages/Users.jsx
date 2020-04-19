@@ -20,8 +20,8 @@ const Users = () => {
     setEditableUserId(user.id);
   };
 
-  const editUser = (title, firstName, lastName, dob) => {
-    console.log(title, firstName, lastName, dob);
+  const editUser = ({title, firstName, lastName, dob}) => {
+    console.log('....', title, firstName, lastName, dob);
   };
 
   if (!userData) return  null
@@ -32,7 +32,7 @@ const Users = () => {
           {userData.map((user) =>
               <Choose>
                 <When condition={user.id === editableUserId}>
-                  <EditUser key={user.id} user={user} onClick={() => editUser(...user)} />
+                  <EditUser key={user.id} user={user} onClick={() => editUser(user)} />
                 </When>
                 <Otherwise>
                   <UserItem key={user.id} user={user} onClick={() => setSelectedUser(user)} />

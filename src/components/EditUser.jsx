@@ -42,7 +42,7 @@ const EditUser = ({ user, onClick }) => {
       <label htmlFor="dob">Date of birth</label>
       <input id="dob" type="text" value={formData.dob} onChange={updateForm} />
     </div>
-    <button onClick={() => onClick(title, firstName, lastName, dob)}>Update user</button>
+    <button onClick={() => onClick(formData)}>Update user</button>
   </li>
 };
 
